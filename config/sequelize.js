@@ -1,8 +1,11 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config(); // Carregar variáveis do .env
 
-// Configuração do Sequelize com a URL do banco de dados
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const { DATABASE_URL, PGUSER, PGPASSWORD, PGHOST, PGPORT, PGDATABASE } = process.env;
+
+const connectionString = DATABASE_URL || `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`;
+
+const sequelize = new Sequelize(connectionString, {
     dialect: 'postgres',
     logging: false, // Desabilitar log de SQL (opcional)
     dialectOptions: {
