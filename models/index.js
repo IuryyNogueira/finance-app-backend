@@ -2,30 +2,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('sequelize');
+const sequelize = require('../config/sequelize'); // Importar a configuração do Sequelize
 const basename = path.basename(__filename);
 const db = {};
-
-let sequelize;
-if (process.env.DATABASE_URL) {
-  sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: 'postgres',
-    protocol: 'postgres',
-    logging: false
-  });
-} else {
-  sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
-    {
-      host: process.env.DB_HOST,
-      dialect: 'postgres',
-      port: process.env.DB_PORT,
-      logging: false
-    }
-  );
-}
 
 fs
   .readdirSync(__dirname)
