@@ -12,4 +12,5 @@ const sequelize = new Sequelize(databaseUrl, {
   logging: false, // ou true se você quiser ver os logs de SQL
 });
 
+
 module.exports = sequelize;
