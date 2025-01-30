@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const Sequelize = require('sequelize'); // Importar Sequelize
 const sequelize = require('../config/sequelize'); // Importar a configuração do Sequelize
 const basename = path.basename(__filename);
 const db = {};
