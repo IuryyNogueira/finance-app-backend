@@ -1,7 +1,8 @@
-const express = require('express');
-const { sequelize } = require('./models');
-const routes = require('./routes/routes');
 require('dotenv').config(); // Carregar variáveis do .env
+
+const express = require('express');
+const sequelize = require('./models').sequelize; // Importar a instância do Sequelize
+const routes = require('./routes'); // Certifique-se de que você tem um arquivo de rotas
 
 const app = express();
 app.use(express.json());
