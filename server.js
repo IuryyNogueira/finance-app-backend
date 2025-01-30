@@ -17,7 +17,5 @@ sequelize.authenticate()
     });
   })
   .catch(err => {
-    console.error('❌ Erro ao conectar ao banco de dados:', err);
+    console.error('❌ Não foi possível conectar ao banco de dados:', err);
   });
-
-module.exports = app; // Exportar o app para uso nos testes
