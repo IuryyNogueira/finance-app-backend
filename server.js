@@ -6,7 +6,7 @@ const routes = require('./routes/routes'); // Importar o arquivo de rotas
 
 const app = express();
 app.use(express.json());
-app.use('/api', routes);
+app.use('/api', routes); // Ensure the routes are prefixed with /api
 
 const PORT = process.env.PORT || 8080;
 
